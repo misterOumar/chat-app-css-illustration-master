@@ -70,7 +70,7 @@ img {
   overflow: hidden;
 }
 .bounce-1 {
-  width: 30rem;
+  width: 35%;
   background: linear-gradient(
     35deg,
     hsl(264, 100%, 61%),
@@ -86,25 +86,26 @@ img {
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 30rem;
+  width: 40%;
   background: hsl(270, 20%, 96%);
   height: 85vh;
   border-top-right-radius: 30rem;
   border-top-left-radius: 30rem;
-  margin-right: -8rem;
+  transform: translateX(50%);
 }
 
 .container {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 6rem;
   width: 100%;
 }
 
 .phone {
-  width: 22rem;
+  width: 23rem;
   background: var(--color-white);
-  box-shadow: 5px 15px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 12px 12px 20px -11px rgba(0, 0, 0, 0.75);
   border-radius: 2.5rem;
   padding: 0.6rem;
   overflow: hidden;
@@ -160,9 +161,6 @@ img {
 
 .phone .head .content {
   width: 100%;
-  /* display: flex;
-  justify-content: space-between;
-  align-items: center; */
   display: grid;
   grid-template-columns: 2rem auto 2rem;
   align-items: center;
@@ -199,7 +197,7 @@ img {
 }
 
 .messages .allsms {
-  max-height: 35rem;
+  max-height: 32rem;
   overflow-y: scroll;
   scrollbar-width: thin;
   scrollbar-color: transparent transparent;
@@ -213,9 +211,22 @@ img {
   color: var(--moderate_violet);
   background: #efe4f2;
   margin-bottom: 0.8rem;
+  transition: transform 0.5s ease;
+}
+.messages .message:hover {
+  transform: translateX(-10px);
+  cursor: pointer;
+  box-shadow: 0px 10px 10px -11px rgba(0, 0, 0, 0.75);
+}
+.messages .message.left:hover {
+  transform: translateX(10px);
+  cursor: pointer;
 }
 .messages .message.left {
   border-radius: 14px 14px 14px 6px;
+}
+.messages .message:not(.left) {
+  box-shadow: -1px 14px 14px -11px rgba(0, 0, 0, 0.2);
 }
 
 .messages .walk {
@@ -324,21 +335,31 @@ button {
 }
 
 .description {
-  width: 30rem;
+  max-width: 35rem;
+  transform: translateX(6.5rem);
 }
 .description h1 {
   color: var(--very_dark_desaturated_violet);
   font-weight: 500;
   margin-bottom: 1rem;
-  font-size: 2.5rem;
+  font-size: 4rem;
 }
 .description p {
   color: var(--dark_grayish_violet);
-  line-height: 1.5rem;
+  font-size: 1.3rem;
+  line-height: 2.3rem;
 }
 
 footer {
   bottom: 0;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
 
 /* MEDIA QUERIES */
@@ -359,9 +380,13 @@ footer {
   }
   .description {
     width: 100%;
+    transform: translateX(0);
   }
   .description p,
   .description h1 {
     text-align: center;
+  }
+  .description h1 {
+    font-size: 2.5rem;
   }
 }
