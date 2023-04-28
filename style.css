@@ -109,7 +109,12 @@ img {
   border-radius: 2.5rem;
   padding: 0.6rem;
   overflow: hidden;
+  transition: transform 0.4s ease;
 }
+.phone:hover {
+  transform: translateY(-10px);
+}
+
 .phone .screen_message {
   background: var(--light_grayish_violet);
   border-radius: 2rem;
@@ -370,6 +375,9 @@ footer {
     height: 50%;
     width: calc(50% + 8rem);
   }
+  .bounce-2 {
+    width: 100%;
+  }
   main {
     height: auto;
   }
@@ -387,6 +395,6 @@ footer {
     text-align: center;
   }
   .description h1 {
-    font-size: 2.5rem;
+    font-size: 3.3rem;
   }
 }
